@@ -66,6 +66,7 @@ class _AddFormPageState extends State<AddFormPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         title: const Text(
           'Tugas lagikah?',
@@ -163,7 +164,7 @@ class _AddFormPageState extends State<AddFormPage> {
               const Expanded(child: SizedBox()),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.blue,
+                  backgroundColor: Colors.blueGrey,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
@@ -190,7 +191,7 @@ class _AddFormPageState extends State<AddFormPage> {
                     } else {
                       await TaskController().updateTask(task.id, task);
                     }
-                    Navigator.pushReplacement(
+                    Navigator.push(
                       context,
                       MaterialPageRoute(builder: (context) => const HomePage()),
                     );
